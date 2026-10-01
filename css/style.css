@@ -14,9 +14,7 @@
 
 .skip-link:focus {
     top: 10px;
-    /* Trượt xuống khi focus */
 }
-
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,7 +55,6 @@ h2 {
     margin-top: 25px;
 }
 
-
 .nav-bar ul {
     list-style: none;
     margin: 0;
@@ -90,7 +87,6 @@ h2 {
     background-color: #c9001f;
 }
 
-
 main {
     width: 85%;
     max-width: 1100px;
@@ -106,28 +102,21 @@ main a {
     font-weight: bold;
 }
 
-
 img {
     border: 3px solid #2f3442;
     padding: 6px;
     border-radius: 10px;
     background-color: #0d0e12;
     max-width: 100%;
+    height: auto;
     box-sizing: border-box;
-
-    max-width: 100%;  
-    height: auto;
 }
 
-/* Cho thẻ chứa ảnh đội hình trải dài cả 2 cột của Grid */
-.team-card-full {
-    grid-column: 1 / -1;  /* Trải dài từ cột 1 đến hết */
-    text-align: center;
-}
-
-.team-card-full img {
-    width: 80%;           /* Phóng to ảnh chiếm 80% bề ngang trang web */
-    height: auto;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 25px 0;
 }
 
 .grid-card {
@@ -138,21 +127,22 @@ img {
 }
 
 .grid-card img {
-    width: 300px;
-    height: auto;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .grid-card .team-t1-image {
     width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .grid-card img:hover {
     transform: scale(1.03);
     border-color: #c9001f;
 }
-
 
 .flex-gallery {
     display: flex;
@@ -169,30 +159,24 @@ img {
     transition: all 0.3s ease;
 }
 
-
 .flex-gallery img:hover {
     transform: scale(1.05);
     border-color: #c9001f;
 }
 
-
 .flex-gallery img:nth-child(even) {
     border-radius: 30px 4px 30px 4px;
     border-color: #c9001f;
-    /* Viền đỏ T1 */
 }
 
 .flex-gallery img:nth-child(odd) {
     border-radius: 4px 30px 4px 30px;
     border-color: #3b82f6;
-    /* Viền xanh tương phản */
 }
-
 
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 ratio */
     height: 0;
     overflow: hidden;
     margin-top: 15px;
